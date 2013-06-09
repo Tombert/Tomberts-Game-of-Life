@@ -32,6 +32,6 @@ class Grid{
     //   if (myObject.markedForLiving == false) myObject.alive = false
     // }
     
-    arrayOfCells.par.map(i => i.par.map(j=>j.kill))
+    arrayOfCells.par.map(_.par.map(_.kill) )
   }
 }
