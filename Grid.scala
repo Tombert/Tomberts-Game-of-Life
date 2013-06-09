@@ -20,7 +20,7 @@ class Grid{
   }
 
   def examine = {
-    var countArray = Array.ofDim[Boolean](8) //One for each adjacent and diagonal cell
+    var countArray = Array.fill(8){false} //One for each adjacent and diagonal cell
  
     for(i<- 0 to 99){
       for(j<- 0 to 99) {
@@ -51,14 +51,6 @@ class Grid{
     	  countArray(7) = arrayOfCells(i-1)(j+1).alive
 	}
 
-	// countArray(0) = true
-	// countArray(1) = true
-	// countArray(2) = true
-	// countArray(3) = true
-	// countArray(4) = true
-	// countArray(5) = true
-	// countArray(6) = true
-	// countArray(7) = true
     	if(countArray.count(_ == true) == 2 || countArray.count(_ == true) == 3){
 
     	  arrayOfCells(i)(j).markedForLiving = true
