@@ -1,5 +1,12 @@
 object mainGame {
   def main(args: Array[String]) {
-    println("Hello, world! " + args.toList)
+    var myGrid = new Grid()
+   
+    while(true){
+       Runtime.getRuntime().exec("clear");
+      println("fart")      
+      myGrid.display
+
+    }
   }
 }
