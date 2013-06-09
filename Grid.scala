@@ -1,10 +1,9 @@
 class Grid{
-  private var arrayOfCells = Array.ofDim[Cell](100, 100)
-  
+  private var arrayOfCells = Array.ofDim[Cell](100, 100)  
   def examine = {
 
     for(i<- 1 to 100){
-      for(j<-1 to 100){
+      for(j<-1 to 100) {
 	var countArray = Array.ofDim[Boolean](8) //One for each adjacent and diagonal cell
 
   	countArray(1) = arrayOfCells(i-1)(j-1).alive
@@ -25,13 +24,13 @@ class Grid{
 	
       }
     }
+    
+    //Kill the cells that are marked. 
+    arrayOfCells.par.map(_.par.map(_.kill));
   }
 
-  def kill = {
-    // def checkToKill(myObject:Cell) = {
-    //   if (myObject.markedForLiving == false) myObject.alive = false
-    // }
-    
-    arrayOfCells.par.map(_.par.map(_.kill) )
-  }
+
+
+
+
 }

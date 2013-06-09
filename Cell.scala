@@ -6,10 +6,6 @@ class Cell {
   def alive = _alive
   def alive_=(d:Boolean):Unit = _alive = d
 
-  // def markedForDead = _markedForDead
-  // def markedForDead_= (m:Boolean):Unit = _markedForDead = m
-  
-
   def markedForLiving = _markedForLiving
 
   def markedForLiving_= (l:Boolean):Unit = _markedForLiving = l
