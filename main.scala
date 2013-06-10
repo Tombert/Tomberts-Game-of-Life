@@ -3,8 +3,7 @@ object mainGame {
     var myGrid = new Grid()
    
     while(true){
-       Runtime.getRuntime().exec("clear");
-      println("fart")      
+      Runtime.getRuntime().exec("clear");
       myGrid.display
 
     }

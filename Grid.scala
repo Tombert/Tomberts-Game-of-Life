@@ -1,9 +1,10 @@
 class Grid{
   var arrayOfCells = Array.fill(100,100){new Cell}
-
+  arrayOfCells (20)(20).alive = true
+  arrayOfCells (21)(20).alive = true
+  arrayOfCells (20)(21).alive = true
+  arrayOfCells (21)(21).alive = true
   def display = {
-   this.examine
-
     for(i<-arrayOfCells) {
       for(j<-i) {
        
@@ -16,7 +17,7 @@ class Grid{
       }
      println("")
     }
-
+    this.examine
   }
 
   def examine = {
