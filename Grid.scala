@@ -1,6 +1,13 @@
 class Grid(inputheight:Int, inputwidth:Int){
-  var height = inputheight
-  var width = inputwidth
+  var _height = inputheight
+  var _width = inputwidth
+  
+  def height = inputheight
+  def height_= (h:Int):Unit= _height = h
+
+  def width = _width
+  def width_= (w:Int):Unit= _width = w
+
   var arrayOfCells = Array.fill(height,width){new Cell}
   // arrayOfCells (19)(20).alive = true
   // arrayOfCells (20)(20).alive = true
