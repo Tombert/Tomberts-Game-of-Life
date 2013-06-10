@@ -1,6 +1,6 @@
 class Grid(inputheight:Int, inputwidth:Int){
-  var _height = inputheight
-  var _width = inputwidth
+  private var _height = inputheight
+  private var _width = inputwidth
   
   def height = inputheight
   def height_= (h:Int):Unit= _height = h

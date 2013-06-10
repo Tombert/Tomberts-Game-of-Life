@@ -1,7 +1,7 @@
 class Cell {
-  var _alive:Boolean = false
-  var _markedForDead:Boolean = true
-  var _markedForLiving:Boolean = false
+  private var _alive:Boolean = false
+  private var _markedForDead:Boolean = true
+  private var _markedForLiving:Boolean = false
 
   def alive = _alive
   def alive_=(d:Boolean):Unit = _alive = d
