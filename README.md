@@ -9,6 +9,6 @@ I love Scala, I want to learn functional, I figured this would be a good way
 to do it. 
 
 This is software is licensed under the BSD license.  For more information, please check out
-the license.txt fie. 
+the license.txt file. 
 
 Scala 2.7.7 or higher is required to compile this application. 
