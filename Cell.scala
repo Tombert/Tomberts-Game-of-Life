@@ -12,10 +12,6 @@ class Cell {
   
 
   def kill:Unit = {
-    if(markedForLiving){
-      alive = true
-    } else {
-      alive = false
-    }
+   alive = markedForLiving
   }
 }
