@@ -1,12 +1,16 @@
-class Grid{
-  var arrayOfCells = Array.fill(50,50){new Cell}
-  arrayOfCells (19)(20).alive = true
-  arrayOfCells (20)(20).alive = true
-  arrayOfCells (21)(20).alive = true
-  arrayOfCells (21)(19).alive = true
-  arrayOfCells (20)(18).alive = true
+class Grid(inputheight:Int, inputwidth:Int){
+  var height = inputheight
+  var width = inputwidth
+  var arrayOfCells = Array.fill(height,width){new Cell}
+  // arrayOfCells (19)(20).alive = true
+  // arrayOfCells (20)(20).alive = true
+  // arrayOfCells (21)(20).alive = true
+  // arrayOfCells (21)(19).alive = true
+  // arrayOfCells (20)(18).alive = true
   //Coordinates of a glider. Need to make a text parser, I think
-
+  arrayOfCells(19)(19).alive = true
+  arrayOfCells(19)(20).alive = true
+  arrayOfCells(19)(21).alive = true
   def display = {
     for(i<-arrayOfCells) {
       for(j<-i) {
@@ -27,32 +31,32 @@ class Grid{
   def examine = {
     var countArray = Array.fill(8){false} //One for each adjacent and diagonal cell
  
-    for(i<- 0 to 49){
-      for(j<- 0 to 49) {
+    for(i<- 0 to height-1){
+      for(j<- 0 to width-1) {
 
 	
    	if(i>0 && j>0){
 	  countArray(0) = arrayOfCells(i-1)(j-1).alive
 	}
-	if(i<49 && j<49){
+	if(i<height-1 && j<width-1){
     	  countArray(1) = arrayOfCells(i+1)(j+1).alive
 	}
 	if(j>0){
     	  countArray(2) = arrayOfCells(i)(j-1).alive
 	}
-	if(j>0 && i<49){
+	if(j>0 && i<height-1){
     	  countArray(3) = arrayOfCells(i+1)(j-1).alive
 	}
-	if(i<49){
+	if(i<height-1){
     	  countArray(4) = arrayOfCells(i+1)(j).alive
 	}
    	if(i>0){
     	  countArray(5) = arrayOfCells(i-1)(j).alive
 	}
-	if(j<49){
+	if(j<width-1){
     	  countArray(6) = arrayOfCells(i)(j+1).alive
 	}
-	if(i>0 && j<49){
+	if(i>0 && j<width-1){
     	  countArray(7) = arrayOfCells(i-1)(j+1).alive
 	}
 

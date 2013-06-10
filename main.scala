@@ -1,6 +1,6 @@
 object mainGame {
   def main(args: Array[String]) {
-    var myGrid = new Grid()
+    var myGrid = new Grid(50, 50)
    
     while(true){
       Runtime.getRuntime().exec("clear");
