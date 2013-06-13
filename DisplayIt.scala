@@ -41,14 +41,19 @@ object DisplayIt {
   }
 
   def drawBox(center:Int, sideLength:Int=100) = {
+    var realSideLength = sideLength/2
     GL11.glBegin(GL11.GL_QUADS)
-    GL11.glVertex2f(center-sideLength,center-sideLength)
-    GL11.glVertex2f(center+sideLength,center-sideLength)
-    GL11.glVertex2f(center+sideLength,center+sideLength)
-    GL11.glVertex2f(center-sideLength,center+sideLength)
+    GL11.glVertex2f(center-realSideLength,center-realSideLength)
+    GL11.glVertex2f(center+realSideLength,center-realSideLength)
+    GL11.glVertex2f(center+realSideLength,center+realSideLength)
+    GL11.glVertex2f(center-realSideLength,center+realSideLength)
     GL11.glEnd
   }
 
+  def renderGrid(g:Grid) = {
+    
+  }
+  
   def updateIt = {
 
     Display.sync(FRAMERATE)
