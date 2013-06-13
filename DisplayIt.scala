@@ -5,7 +5,7 @@ import input._
 import math._
 
 object DisplayIt {
-  val FRAMERATE = 60
+  val FRAMERATE = 30
   private var _width = 0
   private var _height = 0
   

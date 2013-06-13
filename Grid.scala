@@ -11,15 +11,15 @@ class Grid(inputheight:Int, inputwidth:Int){
   var arrayOfCells = Array.fill(height,width){new Cell}
 
   def cell (y:Int,x:Int) = arrayOfCells(y)(x)
-  // arrayOfCells (19)(20).alive = true
-  // arrayOfCells (20)(20).alive = true
-  // arrayOfCells (21)(20).alive = true
-  // arrayOfCells (21)(19).alive = true
-  // arrayOfCells (20)(18).alive = true
+  arrayOfCells (19)(20).alive = true
+  arrayOfCells (20)(20).alive = true
+  arrayOfCells (21)(20).alive = true
+  arrayOfCells (21)(19).alive = true
+  arrayOfCells (20)(18).alive = true
   //Coordinates of a glider. Need to make a text parser, I think
-  arrayOfCells(19)(19).alive = true
-  arrayOfCells(19)(20).alive = true
-  arrayOfCells(19)(21).alive = true
+  // arrayOfCells(19)(19).alive = true
+  // arrayOfCells(19)(20).alive = true
+  // arrayOfCells(19)(21).alive = true
   def display = {
     for(i<-arrayOfCells) {
       for(j<-i) {
