@@ -27,7 +27,10 @@ object DisplayIt {
     }
     
     startGL
-    updateIt
+    while(!Display.isCloseRequested){
+      updateIt
+    }
+    Display.destroy
   }
   
   def startGL = {
@@ -39,14 +42,15 @@ object DisplayIt {
 
   def drawBox(center:Int, sideLength:Int=100) = {
     GL11.glBegin(GL11.GL_QUADS)
-      GL11.glVertex2f(center-sideLength,center-sideLength)
-      GL11.glVertex2f(center+sideLength,center-sideLength)
-      GL11.glVertex2f(center+sideLength,center+sideLength)
-      GL11.glVertex2f(center-sideLength,center+sideLength)
+    GL11.glVertex2f(center-sideLength,center-sideLength)
+    GL11.glVertex2f(center+sideLength,center-sideLength)
+    GL11.glVertex2f(center+sideLength,center+sideLength)
+    GL11.glVertex2f(center-sideLength,center+sideLength)
     GL11.glEnd
   }
 
   def updateIt = {
+
     Display.sync(FRAMERATE)
 
     GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
@@ -54,5 +58,6 @@ object DisplayIt {
     drawBox(200);
     
     Display.update
+
   }
 }
