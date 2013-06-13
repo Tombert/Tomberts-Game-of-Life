@@ -9,6 +9,8 @@ class Grid(inputheight:Int, inputwidth:Int){
   def width_= (w:Int):Unit= _width = w
 
   var arrayOfCells = Array.fill(height,width){new Cell}
+
+  def cell (y:Int,x:Int) = arrayOfCells(y)(x)
   // arrayOfCells (19)(20).alive = true
   // arrayOfCells (20)(20).alive = true
   // arrayOfCells (21)(20).alive = true

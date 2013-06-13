@@ -51,7 +51,12 @@ object DisplayIt {
   }
 
   def renderGrid(g:Grid) = {
-    
+    g.examine
+    for (i<-0 to g.height){
+      for(j<-0 to g.width){
+	g.cell(i,j)
+      }
+    }
   }
   
   def updateIt(g:Grid) = {
@@ -59,8 +64,8 @@ object DisplayIt {
     Display.sync(FRAMERATE)
 
     GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
-    
-    drawBox(200);
+    renderGrid(g)
+//    drawBox(200);
     
     Display.update
 
