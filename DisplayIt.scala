@@ -43,7 +43,7 @@ object DisplayIt {
   def drawBox(colorOn:Boolean, horcenter:Int,vertcenter:Int, horsideLength:Int=100, vertsideLength:Int=100) = {
     var realHorSideLength = horsideLength/2
     var realVertSideLength = vertsideLength/2
-    if(colorOn) GL11.glColor3f(0.5f,0.5f,1.0f) else GL11.glColor3f(0.5f,0.5f,0.0f);
+    if(colorOn) GL11.glColor3f(0.0f,0.0f,1.0f) else GL11.glColor3f(0.0f,0.0f,0.0f);
     GL11.glBegin(GL11.GL_QUADS)
     GL11.glVertex2f(horcenter-realHorSideLength,vertcenter-realVertSideLength)
     GL11.glVertex2f(horcenter+realHorSideLength,vertcenter-realVertSideLength)
