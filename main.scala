@@ -2,6 +2,7 @@
 
 object Main{
   def main(args: Array[String]){
-    DisplayIt.init()
+    var myGrid = new Grid(50,50)
+    DisplayIt.init(myGrid)
   }
 }

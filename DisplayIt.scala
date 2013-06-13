@@ -16,7 +16,7 @@ object DisplayIt {
   def height_=(h:Int):Unit = _height = h
 
 
-  def init (w:Int=800, h:Int=600) = {
+  def init (g:Grid,w:Int=800, h:Int=600) = {
     try {
       width = w
       height = h
@@ -28,7 +28,7 @@ object DisplayIt {
     
     startGL
     while(!Display.isCloseRequested){
-      updateIt
+      updateIt(g)
     }
     Display.destroy
   }
@@ -54,7 +54,7 @@ object DisplayIt {
     
   }
   
-  def updateIt = {
+  def updateIt(g:Grid) = {
 
     Display.sync(FRAMERATE)
 
