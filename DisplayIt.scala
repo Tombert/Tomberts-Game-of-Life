@@ -6,12 +6,20 @@ import math._
 
 object DisplayIt {
   val FRAMERATE = 60
-  var width = 0
-  var height = 0
+  private var _width = 0
+  private var _height = 0
+  
+  def width = _width
+  def width_=(w:Int):Unit = _width = w
+  
+  def height = _height
+  def height_=(h:Int):Unit = _height = h
+
+
   def init (w:Int=800, h:Int=600) = {
     try {
       width = w
-      height= h
+      height = h
       Display.setDisplayMode(new DisplayMode(width,height))
       Display.create
     } catch {
