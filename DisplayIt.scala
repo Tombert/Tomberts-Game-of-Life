@@ -40,22 +40,32 @@ object DisplayIt {
     GL11.glMatrixMode(GL11.GL_MODELVIEW);
   }
 
-  def drawBox(center:Int, sideLength:Int=100) = {
-    var realSideLength = sideLength/2
+  def drawBox(colorOn:Boolean, horcenter:Int,vertcenter:Int, horsideLength:Int=100, vertsideLength:Int=100) = {
+    var realHorSideLength = horsideLength/2
+    var realVertSideLength = vertsideLength/2
+    if(colorOn) GL11.glColor3f(0.5f,0.5f,1.0f) else GL11.glColor3f(0.5f,0.5f,0.0f);
     GL11.glBegin(GL11.GL_QUADS)
-    GL11.glVertex2f(center-realSideLength,center-realSideLength)
-    GL11.glVertex2f(center+realSideLength,center-realSideLength)
-    GL11.glVertex2f(center+realSideLength,center+realSideLength)
-    GL11.glVertex2f(center-realSideLength,center+realSideLength)
+    GL11.glVertex2f(horcenter-realHorSideLength,vertcenter-realVertSideLength)
+    GL11.glVertex2f(horcenter+realHorSideLength,vertcenter-realVertSideLength)
+    GL11.glVertex2f(horcenter+realHorSideLength,vertcenter+realVertSideLength)
+    GL11.glVertex2f(horcenter-realHorSideLength,vertcenter+realVertSideLength)
     GL11.glEnd
   }
 
   def renderGrid(g:Grid) = {
-    g.examine
-    for (i<-0 to g.height){
-      for(j<-0 to g.width){
+    var centerShift = 0
+    var vertShift = 0
+
+    for (i<-0 to g.height-1){
+      for(j<-0 to g.width-1){
+	drawBox(g.cell(i,j).alive, centerShift,vertShift,width/g.width, height/g.height)
+
 	g.cell(i,j)
+	centerShift += width/g.width
       }
+      
+      centerShift=0
+      vertShift += height/g.height
     }
   }
   
@@ -64,6 +74,7 @@ object DisplayIt {
     Display.sync(FRAMERATE)
 
     GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
+    g.examine
     renderGrid(g)
 //    drawBox(200);
     
