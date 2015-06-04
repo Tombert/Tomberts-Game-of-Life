@@ -1,6 +1,10 @@
 Tombert's Game of Life
 ==================
-UPDATE 6-12-13:
+### UPDATE 6-4-15: 
+IT's been a couple years, but I rewrote this more-better in Haskell.  Here's a [link](https://github.com/tombert/HGOL)
+
+
+###UPDATE 6-12-13:
 This now has graphics, using the excellent LWJGL.  As LWJGL is also licensed
 under the BSD license, nothing needs to be updated. 
 
